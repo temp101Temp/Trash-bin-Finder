@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const router = express.Router()
 const bodyParser = require('body-parser');
-const validator = require('validatorjs');
 const config = require('./static/config');
 
 
@@ -18,6 +17,8 @@ const PORT =  3000
 // utils
 const Client = require('./utils/client');
 const RedisClient  =require("./utils/redis-client")
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocs = require('./utils/swagger')
 
 
 initServer()
@@ -36,6 +37,7 @@ uncaughtErrorHandler()
     app.use(bodyParser.json());
     app.use('/api',routes(router, isAliveRouter(router),
     trashBinRouter(router,redisClient,trashbinApi,config.clientSettings.urlEnding)));
+    app.use("/swagger",swaggerUi.serve,swaggerUi.setup(swaggerDocs))
 }
 
 function uncaughtErrorHandler (){

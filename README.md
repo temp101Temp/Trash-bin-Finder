@@ -29,6 +29,12 @@ elasticsearch-dal:9000
 tests:4444
 ```
 
+swagger accsessable at
+
+```bash
+http://localhost:3000/swagger
+```
+
 ## Notes
 
 * Tests are located in trash-bin-finder-service
