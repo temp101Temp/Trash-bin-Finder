@@ -2,7 +2,7 @@
 
 ## Installation
 
-Use thw command in each service.
+Use this command in each service.
 
 ```bash
 npm install
