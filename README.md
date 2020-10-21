@@ -8,6 +8,19 @@ Use thw command in each service.
 npm install
 ```
 
+## QuickStart
+
+start the service
+
+```bash
+npm start
+```
+
+testing
+
+```bash
+npm test
+```
 Make sure that these ports are not occupied
 
 ```bash
